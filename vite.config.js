@@ -11,7 +11,6 @@ export default defineConfig(({ command }) => {
     root: 'src',
     build: {
       sourcemap: true,
-
       rollupOptions: {
         input: glob.sync('./src/*.html'),
         output: {
@@ -25,6 +24,23 @@ export default defineConfig(({ command }) => {
       },
       outDir: '../dist',
     },
-    plugins: [injectHTML(), FullReload(['./src/**/**.html'])],
+    plugins: [
+      injectHTML({
+        // Aktualizacja opcji dla injectHTML
+        order: 'pre', // Użyj 'order' zamiast 'enforce'
+        handler: (html, { fileName }) => {
+          // Twoja logika transformacji HTML
+          return html;
+        },
+      }),
+      FullReload(['./src/**/**.html']),
+    ],
+    optimizeDeps: {
+      include: [
+        // Ręczne określenie zależności do pre-bundlingu
+        'axios',
+        'vite-plugin-full-reload',
+      ],
+    },
   };
 });
