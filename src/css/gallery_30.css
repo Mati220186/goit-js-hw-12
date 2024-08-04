@@ -47,17 +47,15 @@ button:hover {
 
 #loader {
   display: none;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  color: #007bff;
   font-family: Montserrat;
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;
   letter-spacing: 0.04em;
-  text-align: left;
-  color: #007bff;
 }
 
 .loading {
@@ -147,4 +145,7 @@ a {
   height: 200px;
   object-fit: cover;
   border: 1px solid #ddd;
+}
+.loadMore {
+  padding: 20px;
 }

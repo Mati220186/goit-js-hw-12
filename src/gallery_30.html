@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <title>Wyszukiwanie Obrazów 3.0</title>
+    <link rel="icon" type="image/svg+xml" href="./public/favicon.svg" />
     <link rel="stylesheet" href="./css/gallery_30.css" />
 
     <link
@@ -21,11 +22,15 @@
         <input type="text" id="searchQuery" placeholder="Search words..." />
         <button type="submit">Search</button>
       </form>
+
+      <div id="gallery"></div>
       <div id="loader" style="display: none">
         Loadind images, please wait...
       </div>
-      <div id="gallery">
-        <button id="loadMore" style="display: none">Load more</button>
+      <div class="loadMore">
+        <button type="button" id="loadMore" style="display: none">
+          Load more
+        </button>
       </div>
     </div>
     <script src="./gallery_30.js" type="module"></script>
