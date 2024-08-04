@@ -12,7 +12,7 @@ const loadMoreImage = document.querySelector(`#loadMore`);
 const loader = document.querySelector(`#loader`);
 let query = ``;
 let page = 1;
-let perPage = 6;
+let perPage = 40;
 
 form.addEventListener(`submit`, async event => {
   event.preventDefault();
